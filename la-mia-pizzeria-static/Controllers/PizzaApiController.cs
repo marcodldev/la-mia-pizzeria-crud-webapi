@@ -63,6 +63,15 @@ namespace la_mia_pizzeria_static.Controllers
             return Ok();
         }
 
+        [HttpPost]
+        public IActionResult NuovaPizza(Pizza pizza)
+        {
+            _context.Pizze.Add(pizza);
+            _context.SaveChanges();
+
+            return Ok(pizza);
+        }
+
         [HttpDelete("{id}")]
         public IActionResult DeletePizza(int id)
         {
