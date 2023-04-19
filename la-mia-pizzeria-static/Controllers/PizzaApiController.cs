@@ -17,6 +17,9 @@ namespace la_mia_pizzeria_static.Controllers
             _context = context;
         }
 
+        //api/pippo/pluto
+        //api/pippo/pluto?prova=ciao
+        //api/PizzaApi/GetPizzas/?name=
         [HttpGet]
         public IActionResult GetPizzas([FromQuery] string? name)
         {
@@ -28,6 +31,16 @@ namespace la_mia_pizzeria_static.Controllers
             return Ok(pizzas);
         }
 
+        // api/PizzaApi/GetPizzas
+
+        // api/[controller]/[action]/[id] -->program.cs MA QUI LO SOVRASCRIVIAMO
+        // api/[contoller]/ --> a causa della route sulla lasse
+
+        // api/PizzaApi/23
+        // api/PizzaApi/GetPizza/23
+
+
+        //api/[contoller]/{id}
         [HttpGet("{id}")]
         public IActionResult GetPizza(int id)
         {

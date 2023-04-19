@@ -1,0 +1,38 @@
+﻿@{
+
+    Layout = "LayoutCustom";
+}
+<h2>Le Paolo-Api-Pizze</h2>
+
+@if (User.IsInRole("Admin"))
+{
+    <div class="pad">
+        <a href="@Url.Action("ApiCreate", "Pizza")">Nuova Api Pizza</a>
+    </div>
+}
+
+
+<div id="pizze" class="container">
+
+</div>
+
+@section Scripts
+    {
+    <script>
+        //loadPizze();
+        //initFilter();
+      
+
+        const pizze = getPizze()
+        .then(res => {
+            const pizze = res.data;
+        });
+
+  
+      
+
+
+ //console.log(pizze);
+
+    </script>
+}
